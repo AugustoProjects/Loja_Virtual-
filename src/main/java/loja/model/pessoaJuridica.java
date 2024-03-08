@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "pessoa_juridica")
 @PrimaryKeyJoinColumn(name = "id")
-public class pessoaJuridica extends pessoa implements Serializable       {
+public class pessoaJuridica extends Pessoa implements Serializable       {
 
 	
 	private static final long serialVersionUID = 1L;

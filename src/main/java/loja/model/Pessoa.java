@@ -19,7 +19,7 @@ import jakarta.persistence.SequenceGenerator;
 @Entity 
 @Inheritance(strategy =InheritanceType.TABLE_PER_CLASS    ) 
 @SequenceGenerator(name = "seq_pessoa", sequenceName = "seq_pessoa",initialValue = 1,allocationSize = 1  )
-public abstract class pessoa implements Serializable   {
+public abstract class Pessoa implements Serializable   {
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -30,8 +30,9 @@ public abstract class pessoa implements Serializable   {
 	private String email;
 	private String telefone;
 	
+	@OneToMany(mappedBy = "pessoa",orphanRemoval = true, cascade = CascadeType.ALL,fetch = FetchType.LAZY )
 	private List<Endereco> enderecos = new ArrayList<Endereco>(); 
-	@OneToMany(mappedBy = "pessoa",orphanRemoval = true, cascade = CascadeType.ALL,fetch = FetchType.LAZY ) 
+	 
 	public List<Endereco> getEnderecos() {
 		return enderecos;
 	}
@@ -74,7 +75,7 @@ public abstract class pessoa implements Serializable   {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		pessoa other = (pessoa) obj;
+		Pessoa other = (Pessoa) obj;
 		return id == other.id;
 	}
 	
