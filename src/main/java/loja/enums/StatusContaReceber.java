@@ -1,13 +1,15 @@
 package loja.enums;
 
-public enum TipoEndereco {
+public enum StatusContaReceber {
 	
-	 COBRANCA("cobranca"),
-	 ENTREGA("entrega"); 
+	 COBRANCA("pagar"),
+	 VENCIDA("vencida"),
+	 ABERTA("aberta"),
+	 QUITADA("quitada"); 
 	
 	private String descricao;
 
-	private TipoEndereco(String descricao) {
+	private StatusContaReceber(String descricao) {
 		this.descricao = descricao;
 	}
 	
@@ -15,8 +17,6 @@ public enum TipoEndereco {
 	public String getDescricao() {
 		return descricao;
 	}
-
-
 
 
 	@Override
