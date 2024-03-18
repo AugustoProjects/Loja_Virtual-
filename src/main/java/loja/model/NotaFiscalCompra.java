@@ -27,7 +27,7 @@ public class NotaFiscalCompra implements Serializable  {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator ="seq_cup_desc"  )
+	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator ="seq_nota_fiscal_compra"  )
 	private long  id;
 	
 	private String numNota;
