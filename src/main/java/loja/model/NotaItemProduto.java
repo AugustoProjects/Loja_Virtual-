@@ -30,6 +30,7 @@ public class NotaItemProduto implements Serializable  {
 	@Id
 	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator ="seq_nota_item_produto"  )
 	private long  id;
+	
 	@Column(nullable = false)
 	private String quantidade;
 	

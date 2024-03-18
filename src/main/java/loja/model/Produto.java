@@ -31,26 +31,32 @@ public class Produto implements Serializable  {
 	@GeneratedValue(strategy =GenerationType.SEQUENCE,generator ="seq_produto"  )
 	private long  id;
 	
+	@Column(nullable = false )
 	private String tipoUnidade;
 	
+	@Column(nullable = false )
 	private String nome;
 	
-	@Column(columnDefinition = "text", length = 2000)
+	@Column(columnDefinition = "text", length = 2000,nullable=false)
 	private String descricao;
 	
+	@Column(nullable = false )
 	private Double peso;
+	@Column(nullable = false )
 	private Double largura;
+	@Column(nullable = false )
 	private Double altura;
+	@Column(nullable = false )
 	private Double profundidade;
-	
+	@Column(nullable = false )
 	private BigDecimal valorVenda = BigDecimal.ZERO;
-	
+	@Column(nullable = false )
 	private Integer  QtdEstoque= 0; 
 	
 	private Integer  QtdAlertaEstoque= 0;
 	
 	private String linkYoutube;
-	
+	@Column(nullable = false )
 	private boolean alertaQtdEstoque=false;
 	
 	

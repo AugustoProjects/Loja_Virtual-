@@ -5,6 +5,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,6 +20,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.AssertFalse;
 import loja.enums.StatusContaPagar;
 
 @Entity
@@ -33,17 +35,21 @@ public class ContasPagar implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_conta_pagar"  ) 
 	private long id;
 	
+	@Column(nullable = false )
 	private String descricao;
 	
+	@Column(nullable = false )
 	@Enumerated(EnumType.STRING) 
 	private StatusContaPagar status;
 	
+	@Column(nullable = false )
 	@Temporal(TemporalType.DATE)
 	private Date dtVencimento;
 	
 	@Temporal(TemporalType.DATE) 
 	private Date dtPagamento;
 	
+	@Column(nullable = false )
 	private BigDecimal valorTotal;
 	
 	private BigDecimal valorDesconto;
